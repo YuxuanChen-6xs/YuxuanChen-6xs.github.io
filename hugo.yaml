@@ -1,0 +1,61 @@
+# hugo server --themesDir ... --baseURL=http://0.0.0.0:1313/example
+
+baseURL: https://YuxuanChen-6xs.github.io
+title: 神马中转站API
+theme: hugo-book
+
+# --- 核心优化设置 (新增) ---
+# 每次构建前自动清空 public 目录，防止旧的搜索 JS 文件堆积
+cleanDestinationDir: true 
+
+# 开启文件压缩，减小网站体积，提升加载速度
+minify:
+  disableXML: false
+  minifyOutput: true
+
+# 允许 Markdown 文件中直接渲染原始 HTML 代码（解除 Raw HTML omitted 警告）
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+# ---------------------------
+
+disableKinds: ["taxonomy", "taxonomyTerm"]
+# themesDir: ../..
+
+# Book configuration
+disablePathToLower: true
+enableGitInfo: true
+params:
+  # (Optional, default true) Show or hide table of contents globally
+  # You can also specify this parameter per page in front matter
+  BookShowToC: true
+
+  # (Optional, default none) Set leaf bundle to render as side menu
+  # When not specified file structure and weights will be used
+  BookMenuBundle: /menu
+
+  BookSearch: true
+  # (Optional, default docs) Specify section of content to render as menu
+  # You can also set value to "*" to render all sections to menu
+  # BookSection: docs
+
+  # This value is duplicate of $link-color for making active link highlight in menu bundle mode
+  # BookMenuBundleActiveLinkColor: \#004ed0
+
+  # Include JS scripts in pages. Disabled by default.
+  # - Keep side menu on same scroll position during navigation
+  BookEnableJS: true
+
+  # Set source repository location.
+  # Used for 'Last Modified' and 'Edit this page' links.
+  BookRepo: https://github.com/YuxuanChen-6xs/YuxuanChen-6xs.github.io
+
+  # Enable "Edit this page" links for 'doc' page type.
+  # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
+  # Path must point to 'content' directory of repo.
+  # BookEditPath: edit/master/exampleSite/content
+
+  BookComments: true
+
+  BookDateFormat: "2006-01-02"
